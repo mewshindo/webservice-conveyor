@@ -1,0 +1,33 @@
+@task1_framework1_HostAddress = http://localhost:54255
+
+POST http://localhost:54255/api/items
+Content-Type: application/json
+
+{
+  "name": "Programming in C#",
+  "price": 39.99
+}
+
+### Попытка создать предмет без имени, должно кинуть 400
+POST http://localhost:54255/api/items
+Content-Type: application/json
+
+{
+  "name": "",
+  "price": 10
+}
+
+### Попытка создать предмет с отрицательной ценой, должно кинуть 400
+POST http://localhost:5089/api/items
+Content-Type: application/json
+
+{
+  "name": "Valid Name",
+  "price": -5
+}
+
+### Получить все предметы, всегда кидает 200
+GET http://localhost:54255/api/items
+
+### Получить какой-нибудь предмет по uuid (надо вместо {id} вставить существующий uuid)
+GET http://localhost:54255/api/items/{id}
