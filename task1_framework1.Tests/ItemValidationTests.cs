@@ -10,7 +10,6 @@ public class ItemValidationTests
 
     public ItemValidationTests()
     {
-        // Arrange: Create a fresh repository for each test
         _repository = new InMemoryItemRepository();
     }
 

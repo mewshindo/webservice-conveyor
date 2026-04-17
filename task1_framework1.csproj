@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="task1_framework1.Tests\**" />
+    <Content Remove="task1_framework1.Tests\**" />
+    <EmbeddedResource Remove="task1_framework1.Tests\**" />
+    <None Remove="task1_framework1.Tests\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.12" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
     <PackageReference Include="xunit" Version="2.9.2" />

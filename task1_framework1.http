@@ -5,7 +5,7 @@ Content-Type: application/json
 
 {
   "name": "Programming in C#",
-  "price": 39.99
+  "price": 69.99
 }
 
 ### Попытка создать предмет без имени, должно кинуть 400
@@ -18,7 +18,7 @@ Content-Type: application/json
 }
 
 ### Попытка создать предмет с отрицательной ценой, должно кинуть 400
-POST http://localhost:5089/api/items
+POST http://localhost:54255/api/items
 Content-Type: application/json
 
 {
@@ -30,4 +30,10 @@ Content-Type: application/json
 GET http://localhost:54255/api/items
 
 ### Получить какой-нибудь предмет по uuid (надо вместо {id} вставить существующий uuid)
-GET http://localhost:54255/api/items/{id}
+GET http://localhost:54255/api/items/{91394696-a8a2-4ed5-a0f3-a0bd0639cddc}
+
+### Получить предметы с сортировкой по цене по возрастанию
+GET http://localhost:54255/api/items/asc
+
+### Получить предметы с сортировкой по цене по убыванию
+GET http://localhost:54255/api/items/desc

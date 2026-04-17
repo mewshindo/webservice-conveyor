@@ -38,6 +38,18 @@ app.MapGet("/api/items/{id:guid}", (Guid id, IItemRepository repo) =>
     return Results.Ok(item);
 });
 
+// Точка доступа для чтения с сортировкой по цене
+app.MapGet("/api/items/{sort:alpha}", (string sort, IItemRepository repo) =>
+{
+    var items = repo.GetAll();
+    return sort.ToLower() switch
+    {
+        "asc" => Results.Ok(items.OrderBy(i => i.Price)),
+        "desc" => Results.Ok(items.OrderByDescending(i => i.Price)),
+        _ => Results.BadRequest(new { error = "Параметр sort должен быть 'asc' или 'desc'" })
+    };
+});
+
 // Точка доступа для создания
 app.MapPost("/api/items", (HttpContext ctx, CreateItemRequest request, IItemRepository repo) =>
 {
