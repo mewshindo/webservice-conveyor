@@ -4,7 +4,7 @@ POST http://localhost:54255/api/items
 Content-Type: application/json
 
 {
-  "name": "Programming in C#",
+  "name": "test",
   "price": 69.99
 }
 
@@ -22,7 +22,7 @@ POST http://localhost:54255/api/items
 Content-Type: application/json
 
 {
-  "name": "Valid Name",
+  "name": "some name",
   "price": -5
 }
 
